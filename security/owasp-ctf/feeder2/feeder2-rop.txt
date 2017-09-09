@@ -1,0 +1,101 @@
+0x400658: ret
+0x40061a: repz ret
+0x4006b9: leave; ret
+0x400742: pop r15; ret
+0x4005b0: pop rbp; ret
+0x400743: pop rdi; ret
+0x40074f: add bl,dh; ret
+0x4006b8: nop; leave; ret
+0x4004fa: add rsp,0x8; ret
+0x4004fb: add esp,0x8; ret
+0x400619: add ebx,esi; ret
+0x400656: nop; pop rbp; ret
+0x40072c: fmul [rax-0x7d]; ret
+0x400741: pop rsi; pop r15; ret
+0x400740: pop r14; pop r15; ret
+0x40074e: add [rax],al; repz ret
+0x400618: add [rcx],al; repz ret
+0x4005f5: nop [rax]; pop rbp; ret
+0x4006ce: mov eax,0x0; pop rbp; ret
+0x4004f8: call rax; add rsp,0x8; ret
+0x4005ae: add [rax],al; pop rbp; ret
+0x40074d: add [rax],al; add bl,dh; ret
+0x400755: sub esp,0x8; add rsp,0x8; ret
+0x400754: sub rsp,0x8; add rsp,0x8; ret
+0x400748: nop [rax+rax*1+0x0]; repz ret
+0x40073f: pop rbp; pop r14; pop r15; ret
+0x400617: and [rax],al; add ebx,esi; ret
+0x40073e: pop r13; pop r14; pop r15; ret
+0x400652: mov edx,0x90fffffe; pop rbp; ret
+0x400747: nop cs:[rax+rax*1+0x0]; repz ret
+0x4005f3: jmp rax; nop [rax]; pop rbp; ret
+0x4005a8: nop [rax+rax*1+0x0]; pop rbp; ret
+0x400614: add eax,0x200a4e; add ebx,esi; ret
+0x400616: or ah,[rax]; add [rcx],al; repz ret
+0x40074c: add [rax],al; add [rax],al; repz ret
+0x400745: nop; nop cs:[rax+rax*1+0x0]; repz ret
+0x4004f6: je 0x4004fa; call rax; add rsp,0x8; ret
+0x40073c: pop r12; pop r13; pop r14; pop r15; ret
+0x40073d: pop rsp; pop r13; pop r14; pop r15; ret
+0x4006c9: call 0x40066c; mov eax,0x0; pop rbp; ret
+0x4005ac: add [rax],al; add [rax],al; pop rbp; ret
+0x4006b3: call 0x400510 <puts@plt>; nop; leave; ret
+0x4005a5: jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x40074b: add [rax],al; add [rax],al; add bl,dh; ret
+0x400651: call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x400650: add al,ch; mov edx,0x90fffffe; pop rbp; ret
+0x400613: mov [rip+0x200a4e],0x1 # 0x601068; repz ret
+0x400752: add [rax],al; sub rsp,0x8; add rsp,0x8; ret
+0x400615: rex.WRX or r12b,[rax]; add [rcx],al; repz ret
+0x40073b: pop rbp; pop r12; pop r13; pop r14; pop r15; ret
+0x4005a6: loopne 0x40060e; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4005ee: mov edi,0x601048; jmp rax; nop [rax]; pop rbp; ret
+0x4005f0: adc [rax+0x0],ah; jmp rax; nop [rax]; pop rbp; ret
+0x40074a: test [rax],al; add [rax],al; add [rax],al; repz ret
+0x400611: call [rbp-0x3a]; add eax,0x200a4e; add ebx,esi; ret
+0x400612: pop rbp; mov [rip+0x200a4e],0x1 # 0x601068; repz ret
+0x4004f3: test rax,rax; je 0x4004fa; call rax; add rsp,0x8; ret
+0x4004f4: test eax,eax; je 0x4004fa; call rax; add rsp,0x8; ret
+0x4006b1: add [rax],al; call 0x400510 <puts@plt>; nop; leave; ret
+0x4006c4: call 0x400659; call 0x40066c; mov eax,0x0; pop rbp; ret
+0x4005aa: test [rax],al; add [rax],al; add [rax],al; pop rbp; ret
+0x4006ae: cmp eax,0x136; call 0x400510 <puts@plt>; nop; leave; ret
+0x400739: or [rbx+0x5d],bl; pop r12; pop r13; pop r14; pop r15; ret
+0x4005ef: rex.W adc [rax+0x0],spl; jmp rax; nop [rax]; pop rbp; ret
+0x40064f: add [rax],al; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x40065f: cmp eax,0x144; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x40064c: cmp eax,0x117; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x40064e: add [rax],eax; add al,ch; mov edx,0x90fffffe; pop rbp; ret
+0x4005ed: pop rbp; mov edi,0x601048; jmp rax; nop [rax]; pop rbp; ret
+0x4005a2: adc [rax+0x0],ah; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4005a0: mov edi,0x601048; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4005a4: add bh,bh; loopne 0x40060e; nop [rax+rax*1+0x0]; pop rbp; ret
+0x40060d: call 0x400580; pop rbp; mov [rip+0x200a4e],0x1 # 0x601068; repz ret
+0x4005a1: rex.W adc [rax+0x0],spl; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4004f1: and [rax],al; test rax,rax; je 0x4004fa; call rax; add rsp,0x8; ret
+0x40059f: pop rbp; mov edi,0x601048; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4006bf: call 0x400646; call 0x400659; call 0x40066c; mov eax,0x0; pop rbp; ret
+0x4004ee: add eax,0x200b05; test rax,rax; je 0x4004fa; call rax; add rsp,0x8; ret
+0x4006ab: dec [rax-0x73]; cmp eax,0x136; call 0x400510 <puts@plt>; nop; leave; ret
+0x4004ef: add eax,0x4800200b; test eax,eax; je 0x4004fa; call rax; add rsp,0x8; ret
+0x4006ad: lea edi,[rip+0x136] # 0x4007e9; call 0x400510 <puts@plt>; nop; leave; ret
+0x4006ac: lea rdi,[rip+0x136] # 0x4007e9; call 0x400510 <puts@plt>; nop; leave; ret
+0x40064b: lea edi,[rip+0x117] # 0x400768; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x40064a: lea rdi,[rip+0x117] # 0x400768; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x40065d: lea rdi,[rip+0x144] # 0x4007a8; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x40065e: lea edi,[rip+0x144] # 0x4007a8; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x4005ec: or ebx,[rbp-0x41]; rex.W adc [rax+0x0],spl; jmp rax; nop [rax]; pop rbp; ret
+0x40060b: mov ebp,esp; call 0x400580; pop rbp; mov [rip+0x200a4e],0x1 # 0x601068; repz ret
+0x40060a: mov rbp,rsp; call 0x400580; pop rbp; mov [rip+0x200a4e],0x1 # 0x601068; repz ret
+0x40059e: adc [rbp-0x41],ebx; rex.W adc [rax+0x0],spl; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x400647: mov rbp,rsp; lea rdi,[rip+0x117] # 0x400768; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x4004ec: mov rax,[rip+0x200b05] # 0x600ff8; test rax,rax; je 0x4004fa; call rax; add rsp,0x8; ret
+0x40065b: mov ebp,esp; lea rdi,[rip+0x144] # 0x4007a8; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x40065a: mov rbp,rsp; lea rdi,[rip+0x144] # 0x4007a8; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x400649: in eax,0x48; lea edi,[rip+0x117] # 0x400768; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x400648: mov ebp,esp; lea rdi,[rip+0x117] # 0x400768; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x40065c: in eax,0x48; lea edi,[rip+0x144] # 0x4007a8; call 0x400510 <puts@plt>; nop; pop rbp; ret
+0x4004ed: mov eax,[rip+0x200b05] # 0x600ff8; test rax,rax; je 0x4004fa; call rax; add rsp,0x8; ret
+0x400609: push rbp; mov rbp,rsp; call 0x400580; pop rbp; mov [rip+0x200a4e],0x1 # 0x601068; repz ret
+0x400608: adc [rbp+0x48],edx; mov ebp,esp; call 0x400580; pop rbp; mov [rip+0x200a4e],0x1 # 0x601068; repz ret
+0x4006a7: call 0x400530 <fgets@plt>; lea rdi,[rip+0x136] # 0x4007e9; call 0x400510 <puts@plt>; nop; leave; ret
