@@ -5,7 +5,7 @@ ELF aduce nou link-area dinamica
 bp - de unde a inceput sa se exec functia curenta
 sp - scade
 
-aslr - address space layout randomization - utila pentru securitate
+aslr - address space layout randomization
 
 brk - apel de sistem pentru alocare memorie, aritmetica pe adrese
 
