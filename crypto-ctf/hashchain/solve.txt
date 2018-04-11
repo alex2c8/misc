@@ -1,0 +1,8 @@
+seed = md5(id)
+
+hashchain = seed, md5(seed), md5(md5(seed)), ...
+
+to register, just give the hash in the hashchain before the given one
+
+to get the flag, compute the hashchain up to the specified hash (n-th hash in hashchain)
+and write the one before that (n-1-th hash in hashchain)

@@ -1,0 +1,3 @@
+Solitaire cipher (Pontifex). 
+Decrypt using https://ermarian.net/services/encryption/solitaire
+Remove X's and spaces and that's the flag.
