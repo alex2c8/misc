@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_5 -->
+<html class=" js no-flexbox flexbox-legacy canvas canvastext postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache" lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><!--<![endif]-->
+		
+		<title>Memeory</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<link type="text/css" rel="stylesheet" href="./Memeory_files/memeory.css" media="screen">
+        <style type="text/css">
+
+body, button, input, select, textarea { color: #f5f0f0 }
+
+
+.divStart, .divLegespiel, #highscore {
+    background: #4a4e73; /* Old browsers */
+    background: -moz-linear-gradient(top,  #4a4e73 1%, #4a4e73 55%, #4a4e73 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#4a4e73), color-stop(55%,#4a4e73), color-stop(100%,#4a4e73)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a4e73', endColorstr='#4a4e73',GradientType=0 ); /* IE6-9 */
+}
+
+.globalButtonAdjust, .globalButton {
+	 background: #4a4e73; /* Old browsers */
+    background: -moz-linear-gradient(top,  #4a4e73 1%, #4a4e73 55%, #4a4e73 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#4a4e73), color-stop(55%,#4a4e73), color-stop(100%,#4a4e73)); /* Chrome,Safari4+ */
+    button: -webkit-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* Chrome10+,Safari5.1+ */
+    button: -o-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* Opera 11.10+ */
+    button: -ms-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* IE10+ */
+    button: linear-gradient(to bottom,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a4e73', endColorstr='#4a4e73',GradientType=0 ); /* IE6-9 */
+	color: #f5f0f0!important;
+}
+
+
+
+.globalButtonAdjust time,
+.globalButtonAdjust span{
+	color: #f5f0f0!important;
+}
+
+
+.innerModuleFlyout { background: #4a4e73;}
+
+@media only screen and (min-width: 768px) {
+
+    .moduleCompetition {
+        background: #4a4e73; /* Old browsers */
+        background: -moz-linear-gradient(top,  #4a4e73 1%, #4a4e73 55%, #4a4e73 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#4a4e73), color-stop(55%,#4a4e73), color-stop(100%,#4a4e73)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #4a4e73 1%,#4a4e73 55%,#4a4e73 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a4e73', endColorstr='#4a4e73',GradientType=0 ); /* IE6-9 */
+    }
+
+    /* moduleHighscore */
+    #highscore { background-color: #4a4e73 }
+	.moduleHighscore .innerModuleTabs ul li a { background-color:#4a4e73; color:#f5f0f0}
+	.moduleHighscore .innerModuleTabs ul li.active a { background-color:#4a4e73; color:#f5f0f0}
+	.moduleHighscore .innerModuleTabs ul li { border: 1px solid #4a4e73; border-right: 1px solid #f5f0f0; border-bottom: 0px;  }
+
+}
+
+</style>
+	</head>
+
+	<body class="frontend" cz-shortcut-listen="true">
+
+		<div id="container">
+
+            <div class="divLegespiel">
+
+	<div id="flagDiv" align="center" style="position: absolute; z-index: 99999999; width: 100%; visibility: hidden;">    
+<img id="flag">	
+	</div>
+		
+
+    <h1>Memeory</h1>
+
+
+<div class="moduleLegespiel"><figure id="legespiel_card_92">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_92">
+				  <img class="boxFront" src="./Memeory_files/47.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_85">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_85">
+				  <img class="boxFront" src="./Memeory_files/43.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_30">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_30">
+				  <img class="boxFront" src="./Memeory_files/16.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_50">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_50">
+				  <img class="boxFront" src="./Memeory_files/26.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_65">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_65">
+				  <img class="boxFront" src="./Memeory_files/33.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_64">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_64">
+				  <img class="boxFront" src="./Memeory_files/33.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_26">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_26">
+				  <img class="boxFront" src="./Memeory_files/14.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_69">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_69">
+				  <img class="boxFront" src="./Memeory_files/35.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_19">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_19">
+				  <img class="boxFront" src="./Memeory_files/10.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_87">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_87">
+				  <img class="boxFront" src="./Memeory_files/44.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_38">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_38">
+				  <img class="boxFront" src="./Memeory_files/20.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_75">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_75">
+				  <img class="boxFront" src="./Memeory_files/38.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_2">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_2">
+				  <img class="boxFront" src="./Memeory_files/2.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_48">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_48">
+				  <img class="boxFront" src="./Memeory_files/25.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_93">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_93">
+				  <img class="boxFront" src="./Memeory_files/47.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_35">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_35">
+				  <img class="boxFront" src="./Memeory_files/18.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_24">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_24">
+				  <img class="boxFront" src="./Memeory_files/13.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_99">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_99">
+				  <img class="boxFront" src="./Memeory_files/50.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_91">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_91">
+				  <img class="boxFront" src="./Memeory_files/46.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_90">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_90">
+				  <img class="boxFront" src="./Memeory_files/46.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_43">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_43">
+				  <img class="boxFront" src="./Memeory_files/22.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_57">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_57">
+				  <img class="boxFront" src="./Memeory_files/29.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_77">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_77">
+				  <img class="boxFront" src="./Memeory_files/39.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_60">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_60">
+				  <img class="boxFront" src="./Memeory_files/31.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_78">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_78">
+				  <img class="boxFront" src="./Memeory_files/40.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_9">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_9">
+				  <img class="boxFront" src="./Memeory_files/5.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_13">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_13">
+				  <img class="boxFront" src="./Memeory_files/7.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_76">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_76">
+				  <img class="boxFront" src="./Memeory_files/39.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_37">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_37">
+				  <img class="boxFront" src="./Memeory_files/19.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_98">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_98">
+				  <img class="boxFront" src="./Memeory_files/50.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_67">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_67">
+				  <img class="boxFront" src="./Memeory_files/34.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_6">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_6">
+				  <img class="boxFront" src="./Memeory_files/4.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_68">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_68">
+				  <img class="boxFront" src="./Memeory_files/35.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_8">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_8">
+				  <img class="boxFront" src="./Memeory_files/5.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_74">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_74">
+				  <img class="boxFront" src="./Memeory_files/38.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_95">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_95">
+				  <img class="boxFront" src="./Memeory_files/48.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_70">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_70">
+				  <img class="boxFront" src="./Memeory_files/36.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_11">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_11">
+				  <img class="boxFront" src="./Memeory_files/6.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_17">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_17">
+				  <img class="boxFront" src="./Memeory_files/9.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_40">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_40">
+				  <img class="boxFront" src="./Memeory_files/21.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_31">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_31">
+				  <img class="boxFront" src="./Memeory_files/16.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_88">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_88">
+				  <img class="boxFront" src="./Memeory_files/45.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_58">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_58">
+				  <img class="boxFront" src="./Memeory_files/30.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_3">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_3">
+				  <img class="boxFront" src="./Memeory_files/2.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_28">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_28">
+				  <img class="boxFront" src="./Memeory_files/15.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_81">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_81">
+				  <img class="boxFront" src="./Memeory_files/41.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_21">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_21">
+				  <img class="boxFront" src="./Memeory_files/11.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_44">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_44">
+				  <img class="boxFront" src="./Memeory_files/23.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_0">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_0">
+				  <img class="boxFront" src="./Memeory_files/1.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_27">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_27">
+				  <img class="boxFront" src="./Memeory_files/14.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_16">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_16">
+				  <img class="boxFront" src="./Memeory_files/9.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_94">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_94">
+				  <img class="boxFront" src="./Memeory_files/48.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_54">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_54">
+				  <img class="boxFront" src="./Memeory_files/28.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_84">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_84">
+				  <img class="boxFront" src="./Memeory_files/43.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_89">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_89">
+				  <img class="boxFront" src="./Memeory_files/45.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_18">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_18">
+				  <img class="boxFront" src="./Memeory_files/10.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_42">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_42">
+				  <img class="boxFront" src="./Memeory_files/22.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_96">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_96">
+				  <img class="boxFront" src="./Memeory_files/49.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_63">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_63">
+				  <img class="boxFront" src="./Memeory_files/32.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_52">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_52">
+				  <img class="boxFront" src="./Memeory_files/27.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_7">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_7">
+				  <img class="boxFront" src="./Memeory_files/4.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_80">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_80">
+				  <img class="boxFront" src="./Memeory_files/41.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_12">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_12">
+				  <img class="boxFront" src="./Memeory_files/7.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_41">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_41">
+				  <img class="boxFront" src="./Memeory_files/21.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_73">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_73">
+				  <img class="boxFront" src="./Memeory_files/37.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_66">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_66">
+				  <img class="boxFront" src="./Memeory_files/34.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_1">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_1">
+				  <img class="boxFront" src="./Memeory_files/1.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_15">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_15">
+				  <img class="boxFront" src="./Memeory_files/8.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_51">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_51">
+				  <img class="boxFront" src="./Memeory_files/26.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_25">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_25">
+				  <img class="boxFront" src="./Memeory_files/13.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_36">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_36">
+				  <img class="boxFront" src="./Memeory_files/19.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_39">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_39">
+				  <img class="boxFront" src="./Memeory_files/20.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_33">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_33">
+				  <img class="boxFront" src="./Memeory_files/17.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_45">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_45">
+				  <img class="boxFront" src="./Memeory_files/23.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_46">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_46">
+				  <img class="boxFront" src="./Memeory_files/24.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_56">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_56">
+				  <img class="boxFront" src="./Memeory_files/29.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_49">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_49">
+				  <img class="boxFront" src="./Memeory_files/25.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_23">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_23">
+				  <img class="boxFront" src="./Memeory_files/12.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_29">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_29">
+				  <img class="boxFront" src="./Memeory_files/15.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_86">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_86">
+				  <img class="boxFront" src="./Memeory_files/44.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_14">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_14">
+				  <img class="boxFront" src="./Memeory_files/8.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_59">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_59">
+				  <img class="boxFront" src="./Memeory_files/30.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_5">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_5">
+				  <img class="boxFront" src="./Memeory_files/3.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_62">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_62">
+				  <img class="boxFront" src="./Memeory_files/32.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_83">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_83">
+				  <img class="boxFront" src="./Memeory_files/42.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_97">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_97">
+				  <img class="boxFront" src="./Memeory_files/49.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_61">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_61">
+				  <img class="boxFront" src="./Memeory_files/31.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_55">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_55">
+				  <img class="boxFront" src="./Memeory_files/28.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_4">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_4">
+				  <img class="boxFront" src="./Memeory_files/3.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_47">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_47">
+				  <img class="boxFront" src="./Memeory_files/24.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_71">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_71">
+				  <img class="boxFront" src="./Memeory_files/36.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_22">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_22">
+				  <img class="boxFront" src="./Memeory_files/12.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_10">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_10">
+				  <img class="boxFront" src="./Memeory_files/6.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_72">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_72">
+				  <img class="boxFront" src="./Memeory_files/37.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_53">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_53">
+				  <img class="boxFront" src="./Memeory_files/27.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_32">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_32">
+				  <img class="boxFront" src="./Memeory_files/17.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_82">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_82">
+				  <img class="boxFront" src="./Memeory_files/42.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_79">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_79">
+				  <img class="boxFront" src="./Memeory_files/40.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_20">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_20">
+				  <img class="boxFront" src="./Memeory_files/11.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure><figure id="legespiel_card_34">
+				<a href="https://hackyeaster.hacking-lab.com/hackyeaster/memeory/memeory.html#card_34">
+				  <img class="boxFront" src="./Memeory_files/18.jpg">
+				  <img class="boxWhite" src="./Memeory_files/shadow_card.png">
+				  <img class="boxBack" src="./Memeory_files/back.jpg">
+				   </a>
+				  <img class="boxStretch" src="./Memeory_files/shim.gif">
+			</figure>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+		
+		
+		
+    <p></p>
+     
+
+    
+</div>
+
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="./Memeory_files/memeory.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./Memeory_files/crypto-js.js" charset="UTF-8"></script>
+		
+        <script type="text/javascript">
+    $(document).on('ready', function()
+    {
+        if(navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)
+            $('html').addClass('safari');
+            window.game = S.game('.moduleLegespiel', {
+            clickCount : false, //if clicks should be counted or not (one click represents a attempt of clicking a pair)
+            clickLimit : 3, //limit of clicks
+            gameLimitTime : null, //if game has a limit of time in seconds, if null no limit
+            showOnStart : false, //if the cards should be visible for the first time
+            startDelay : 1500
+
+        });
+
+        $(".jsReset").click(function(e){
+            e.preventDefault();
+            window.game.restartGame();
+        });
+
+        
+        $(".jsColorboxAjax").colorbox({
+            width: "90%",
+            transition : "none",
+            scrolling : false
+        });
+
+
+        if(typeof window.parent.EW72 != "undefined")
+            window.parent.EW72.resize($("body").height());
+
+        $(window).on('resize', function(){
+            $.colorbox.resize();
+            if(typeof window.parent.EW72 != "undefined")
+                window.parent.EW72.resize($("body").height());
+        });
+
+    })
+</script>
+
+ 
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><button type="button" id="cboxClose"></button></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>

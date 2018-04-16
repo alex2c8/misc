@@ -1,0 +1,3 @@
+Library of Babel 
+hex = babylon.txt
+wall / shelf / volume / page = 4 / 4 / 28 / 355
