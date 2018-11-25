@@ -1,0 +1,1 @@
+qr code, rearrange, use qr code pkg in python

@@ -1,1 +1,8 @@
 sss-*/
+*.jar
+flag
+FLAG
+*.pyc
+__pycache__/
+*.gdb_history
+*.idb
